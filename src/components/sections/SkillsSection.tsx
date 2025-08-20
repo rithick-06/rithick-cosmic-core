@@ -33,18 +33,6 @@ export const SkillsSection = () => {
       ]
     },
     {
-      title: "MLOps & Cloud",
-      color: "from-secondary-glow to-cosmic-secondary",
-      skills: [
-        { name: "Docker", level: 88 },
-        { name: "Kubernetes", level: 75 },
-        { name: "AWS", level: 82 },
-        { name: "MLflow", level: 85 },
-        { name: "FAISS", level: 90 },
-        { name: "Flask", level: 88 },
-      ]
-    },
-    {
       title: "Computer Vision",
       color: "from-cosmic-highlight to-primary",
       skills: [

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Download, Mail, Github, Linkedin as LinkedinIcon, Instagram } from "lucide-react";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { ParticlesBackground } from "../ParticlesBackground";
 import { FloatingIcons } from "../FloatingIcons";
@@ -7,8 +8,8 @@ import heroImage from "@/assets/hero-cosmic-ai.jpg";
 
 export const HeroSection = () => {
   const socialLinks = [
-    { icon: Github, href: "https://github.com/rithick", label: "GitHub" },
-    { icon: LinkedinIcon, href: "https://linkedin.com/in/rithick", label: "LinkedIn" },
+    { icon: Github, href: "https://github.com/rithick-06", label: "GitHub" },
+    { icon: LinkedinIcon, href: "https://www.linkedin.com/in/rithick-m-k/", label: "LinkedIn" },
     { icon: Instagram, href: "https://instagram.com/rithick", label: "Instagram" },
   ];
 
@@ -35,6 +36,17 @@ export const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
+          <motion.div
+            className="flex justify-center mb-6"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.15 }}
+          >
+            <Avatar className="w-28 h-28 ring-2 ring-primary/40 shadow-glow">
+              <AvatarImage src="/profile.jpg" alt="Rithick M K" />
+              <AvatarFallback>RM</AvatarFallback>
+            </Avatar>
+          </motion.div>
           <motion.h1 
             className="text-6xl md:text-8xl font-bold mb-6 text-gradient-cosmic"
             initial={{ scale: 0.8 }}
@@ -75,13 +87,17 @@ export const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 1 }}
           >
-            <Button className="btn-cosmic group">
+            <Button className="btn-cosmic group" asChild>
+              <a href="/resume.pdf" download>
               <Download className="mr-2 h-5 w-5 group-hover:animate-pulse" />
               Download Resume
+              </a>
             </Button>
-            <Button className="btn-outline-cosmic group">
+            <Button className="btn-outline-cosmic group" asChild>
+              <a href="#contact">
               <Mail className="mr-2 h-5 w-5 group-hover:animate-pulse" />
               Contact Me
+              </a>
             </Button>
           </motion.div>
 

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Github, Code, Trophy, Star, ExternalLink } from "lucide-react";
+import { Github, ExternalLink, Code } from "lucide-react";
 
 export const CodingProfilesSection = () => {
   const ref = useRef(null);
@@ -11,11 +11,9 @@ export const CodingProfilesSection = () => {
     {
       id: 1,
       name: "GitHub",
-      username: "@rithick",
-      description: "Open source contributions and personal projects",
-      stats: { repositories: "25+", stars: "150+", followers: "50+" },
+      username: "@rithick-06",
       icon: Github,
-      link: "https://github.com/rithick",
+      link: "https://github.com/rithick-06",
       color: "from-foreground to-muted-foreground",
       bgColor: "bg-foreground/10",
       featured: true
@@ -23,13 +21,12 @@ export const CodingProfilesSection = () => {
     {
       id: 2,
       name: "LeetCode",
-      username: "@rithick_mk",
-      description: "Algorithmic problem solving and challenges",
-      stats: { solved: "200+", rating: "1800+", contests: "25+" },
+      username: "@Rithick_M_K",
       icon: Code,
-      link: "https://leetcode.com/rithick_mk",
+      link: "https://leetcode.com/u/Rithick_M_K/",
       color: "from-orange-400 to-orange-600",
-      bgColor: "bg-orange-500/10"
+      bgColor: "bg-orange-500/10",
+      featured: false
     }
   ];
 
@@ -72,7 +69,7 @@ export const CodingProfilesSection = () => {
             Coding Profiles
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Explore my competitive programming journey and open source contributions
+            Find me on coding platforms
           </p>
         </motion.div>
 
@@ -109,135 +106,34 @@ export const CodingProfilesSection = () => {
                 }}
               >
                 {/* Profile Header */}
-                <div className={`flex items-start justify-between mb-6 ${
-                  profile.featured ? 'flex-col md:flex-row space-y-4 md:space-y-0' : ''
-                }`}>
-                  <div className="flex items-center space-x-4">
-                    <motion.div
-                      className={`p-4 rounded-xl bg-gradient-to-r ${profile.color} shadow-lg`}
-                      whileHover={{ rotate: 5, scale: 1.1 }}
-                      animate={profile.featured ? {
-                        boxShadow: [
-                          "0 0 20px hsl(var(--primary)/0.3)",
-                          "0 0 40px hsl(var(--primary)/0.5)",
-                          "0 0 20px hsl(var(--primary)/0.3)"
-                        ]
-                      } : {}}
-                      transition={profile.featured ? { duration: 2, repeat: Infinity } : {}}
-                    >
-                      <profile.icon className="h-8 w-8 text-white" />
-                    </motion.div>
-                    
-                    <div>
-                      <h3 className={`text-2xl font-bold ${
-                        profile.featured 
-                          ? 'text-gradient-cosmic' 
-                          : 'text-gradient-primary'
-                      }`}>
-                        {profile.name}
-                      </h3>
-                      <p className="text-muted-foreground">
-                        {profile.username}
-                      </p>
-                    </div>
-                  </div>
-
+                <div className="flex items-center justify-center mb-4">
                   <motion.div
-                    whileHover={{ scale: 1.1, rotate: 45 }}
-                    className="p-3 rounded-full bg-muted/20 group-hover:bg-primary/20 transition-colors"
-                  > 
-                    <ExternalLink className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                    className={`p-5 rounded-xl bg-gradient-to-r ${profile.color} shadow-lg`}
+                    whileHover={{ rotate: 5, scale: 1.1 }}
+                    animate={profile.featured ? {
+                      boxShadow: [
+                        "0 0 20px hsl(var(--primary)/0.3)",
+                        "0 0 40px hsl(var(--primary)/0.5)",
+                        "0 0 20px hsl(var(--primary)/0.3)"
+                      ]
+                    } : {}}
+                    transition={profile.featured ? { duration: 2, repeat: Infinity } : {}}
+                  >
+                    <profile.icon className="h-10 w-10 text-white" />
                   </motion.div>
                 </div>
 
-                {/* Profile Content */}
-                <div className="space-y-6">
-                  <p className={`leading-relaxed ${
-                    profile.featured 
-                      ? 'text-foreground/90 text-lg' 
-                      : 'text-muted-foreground'
-                  }`}>
-                    {profile.description}
-                  </p>
-
-                  {/* Stats */}
-                  <div className={`grid ${
-                    profile.featured ? 'grid-cols-3 md:grid-cols-3' : 'grid-cols-3'
-                  } gap-4`}>
-                    {Object.entries(profile.stats).map(([key, value]) => (
-                      <motion.div
-                        key={key}
-                        className={`text-center p-4 rounded-lg ${profile.bgColor} hover:bg-opacity-20 transition-colors`}
-                        whileHover={{ scale: 1.05 }}
-                      >
-                        <div className={`text-2xl font-bold bg-gradient-to-r ${profile.color} bg-clip-text text-transparent`}>
-                          {value}
-                        </div>
-                        <div className="text-xs text-muted-foreground capitalize mt-1">
-                          {key}
-                        </div>
-                      </motion.div>
-                    ))}
-                  </div>
-                </div>
+                {/* Minimal Content */}
+                <div className="space-y-2" />
 
                 {/* Hover Effect Overlay */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${profile.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-xl pointer-events-none`} />
-
-                {/* Featured Badge */}
-                {profile.featured && (
-                  <div className="absolute -top-2 -right-2">
-                    <motion.div
-                      className="px-3 py-1 bg-gradient-to-r from-primary to-primary-glow rounded-full text-xs font-bold text-background"
-                      animate={{
-                        boxShadow: [
-                          "0 0 20px hsl(var(--primary)/0.4)",
-                          "0 0 30px hsl(var(--primary)/0.6)",
-                          "0 0 20px hsl(var(--primary)/0.4)"
-                        ]
-                      }}
-                      transition={{ repeat: Infinity, duration: 2 }}
-                    >
-                      FEATURED
-                    </motion.div>
-                  </div>
-                )}
               </motion.a>
             </motion.div>
           ))}
         </motion.div>
 
-        {/* Additional Info */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="text-center mt-12"
-        >
-          <div className="card-cosmic max-w-2xl mx-auto">
-            <h3 className="text-xl font-bold text-gradient-primary mb-4">
-              Quick Stats
-            </h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-              <div>
-                <div className="text-2xl font-bold text-gradient-cosmic">3+</div>
-                <div className="text-sm text-muted-foreground">Projects</div>
-              </div>
-              <div>
-                <div className="text-2xl font-bold text-gradient-cosmic">2+</div>
-                <div className="text-sm text-muted-foreground">Awards</div>
-              </div>
-              <div>
-                <div className="text-2xl font-bold text-gradient-cosmic">200+</div>
-                <div className="text-sm text-muted-foreground">Problems Solved</div>
-              </div>
-              <div>
-                <div className="text-2xl font-bold text-gradient-cosmic">1800+</div>
-                <div className="text-sm text-muted-foreground">Peak Rating</div>
-              </div>
-            </div>
-          </div>
-        </motion.div>
+        {/* No extra quick stats */}
       </div>
     </section>
   );

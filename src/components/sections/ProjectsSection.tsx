@@ -19,7 +19,8 @@ export const ProjectsSection = () => {
       metrics: "87.59% F1 Score",
       icon: Shield,
       gradient: "from-primary to-primary-glow",
-      features: ["Real-time detection", "Multi-language support", "API integration", "Model optimization"]
+      features: ["Real-time detection", "Multi-language support", "API integration", "Model optimization"],
+      codeUrl: "https://github.com/anushya03/comments-toxicity-detection"
     },
     {
       id: 2, 
@@ -39,7 +40,8 @@ export const ProjectsSection = () => {
       metrics: "Context-Aware",
       icon: MessageSquare,
       gradient: "from-secondary-glow to-cosmic-secondary",
-      features: ["Vector search", "Context retrieval", "Multi-modal", "Scalable architecture"]
+      features: ["Vector search", "Context retrieval", "Multi-modal", "Scalable architecture"],
+      codeUrl: "https://github.com/anushya03/INNOVATIVE-CHATBOT-"
     }
   ];
 
@@ -180,9 +182,12 @@ export const ProjectsSection = () => {
                   <Button 
                     size="sm" 
                     className="btn-outline-cosmic flex-1 group"
+                    asChild
                   >
+                    <a href={project.codeUrl ?? "#"} target="_blank" rel="noopener noreferrer">
                     <Github className="h-4 w-4 mr-2 group-hover:animate-pulse" />
                     Code
+                    </a>
                   </Button>
                   <Button 
                     size="sm" 

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Mail, Send, Phone, MapPin, Github, Linkedin, Twitter, Instagram, Youtube } from "lucide-react";
+import { Mail, Send, Phone, MapPin, Github, Linkedin, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -17,38 +17,59 @@ export const ContactSection = () => {
   });
 
   const socialLinks = [
-    { icon: Github, href: "https://github.com/rithick", label: "GitHub", color: "hover:text-foreground" },
-    { icon: Linkedin, href: "https://linkedin.com/in/rithick", label: "LinkedIn", color: "hover:text-[#0077B5]" },
-    { icon: Twitter, href: "https://twitter.com/rithick", label: "Twitter", color: "hover:text-[#1DA1F2]" },
+    { icon: Github, href: "https://github.com/rithick-06", label: "GitHub", color: "hover:text-foreground" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/rithick-m-k/", label: "LinkedIn", color: "hover:text-[#0077B5]" },
     { icon: Instagram, href: "https://instagram.com/rithick", label: "Instagram", color: "hover:text-[#E4405F]" },
-    { icon: Youtube, href: "https://youtube.com/@rithick", label: "YouTube", color: "hover:text-[#FF0000]" },
   ];
 
   const contactInfo = [
     {
       icon: Mail,
       title: "Email",
-      value: "rithick.ad22@bitsathy.ac.in",
-      link: "mailto:rithick.ad22@bitsathy.ac.in"
+      value: "rithick06@yahoo.com",
+      link: "mailto:rithick06@yahoo.com"
     },
     {
       icon: Phone,
       title: "Phone",
-      value: "+91 XXXXX XXXXX",
-      link: "tel:+91XXXXXXXXX"
+      value: "9585224455",
+      link: "tel:9585224455"
     },
     {
       icon: MapPin,
       title: "Location",
-      value: "India",
+      value: "Tiruppur, India",
       link: null
     }
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log("Form submitted:", formData);
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify({
+          access_key: "a9f3fdb7-1dba-4aff-aebb-feb3500ecdee",
+          subject: "New message from portfolio contact form",
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          from_name: formData.name,
+          replyto: formData.email,
+          botcheck: ""
+        })
+      });
+      const result = await response.json();
+      if (result.success) {
+        setFormData({ name: "", email: "", message: "" });
+        alert("Message sent successfully!");
+      } else {
+        alert("Failed to send message. Please try again later.");
+      }
+    } catch (error) {
+      alert("An error occurred. Please try again.");
+    }
   };
 
   const containerVariants = {
@@ -68,7 +89,7 @@ export const ContactSection = () => {
   };
 
   return (
-    <section ref={ref} className="py-20 px-4 relative overflow-hidden">
+    <section id="contact" ref={ref} className="py-20 px-4 relative overflow-hidden">
       {/* Particles Background */}
       <ParticlesBackground variant="subtle" density={60} />
       
@@ -153,7 +174,7 @@ export const ContactSection = () => {
             <motion.div variants={itemVariants}>
               <Button 
                 className="btn-outline-cosmic w-full group text-lg py-6"
-                onClick={() => window.location.href = 'mailto:rithick.ad22@bitsathy.ac.in'}
+                onClick={() => window.location.href = 'mailto:rithick06@yahoo.com'}
               >
                 <Mail className="mr-3 h-6 w-6 group-hover:animate-pulse" />
                 Email Me Directly

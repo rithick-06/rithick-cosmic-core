@@ -48,7 +48,8 @@ const Portfolio = () => {
               ))}
             </div>
             
-            <motion.button
+            <motion.a
+              href="#contact"
               className="btn-cosmic px-6 py-2"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -57,7 +58,7 @@ const Portfolio = () => {
               whileTap={{ scale: 0.95 }}
             >
               Hire Me
-            </motion.button>
+            </motion.a>
           </div>
         </div>
       </motion.nav>
@@ -148,17 +149,33 @@ const Portfolio = () => {
               Generative AI & Machine Learning Developer crafting the future with intelligent solutions
             </p>
             <div className="flex justify-center space-x-6 pt-4">
-              {['GitHub', 'LinkedIn', 'Instagram'].map((social) => (
-                <motion.a
-                  key={social}
-                  href="#"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                  whileHover={{ scale: 1.2, y: -2 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  {social}
-                </motion.a>
-              ))}
+              <motion.a
+                href="https://github.com/rithick-06"
+                className="text-muted-foreground hover:text-primary transition-colors"
+                whileHover={{ scale: 1.2, y: -2 }}
+                whileTap={{ scale: 0.9 }}
+                target="_blank" rel="noopener noreferrer"
+              >
+                GitHub
+              </motion.a>
+              <motion.a
+                href="https://www.linkedin.com/in/rithick-m-k/"
+                className="text-muted-foreground hover:text-primary transition-colors"
+                whileHover={{ scale: 1.2, y: -2 }}
+                whileTap={{ scale: 0.9 }}
+                target="_blank" rel="noopener noreferrer"
+              >
+                LinkedIn
+              </motion.a>
+              <motion.a
+                href="https://instagram.com/rithick"
+                className="text-muted-foreground hover:text-primary transition-colors"
+                whileHover={{ scale: 1.2, y: -2 }}
+                whileTap={{ scale: 0.9 }}
+                target="_blank" rel="noopener noreferrer"
+              >
+                Instagram
+              </motion.a>
             </div>
             <div className="pt-8 border-t border-card-border">
               <p className="text-sm text-muted-foreground">
