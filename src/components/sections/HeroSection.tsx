@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Download, Mail, Github, Linkedin, Twitter, Instagram, Youtube } from "lucide-react";
+import { Download, Mail, Github, Linkedin, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ParticlesBackground } from "../ParticlesBackground";
 import { FloatingIcons } from "../FloatingIcons";
@@ -9,9 +9,7 @@ export const HeroSection = () => {
   const socialLinks = [
     { icon: Github, href: "https://github.com/rithick", label: "GitHub" },
     { icon: Linkedin, href: "https://linkedin.com/in/rithick", label: "LinkedIn" },
-    { icon: Twitter, href: "https://twitter.com/rithick", label: "Twitter" },
     { icon: Instagram, href: "https://instagram.com/rithick", label: "Instagram" },
-    { icon: Youtube, href: "https://youtube.com/@rithick", label: "YouTube" },
   ];
 
   return (
@@ -89,7 +87,7 @@ export const HeroSection = () => {
 
           {/* Social Links */}
           <motion.div
-            className="flex justify-center space-x-6"
+            className="flex justify-center space-x-6 mt-8"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1.2 }}
