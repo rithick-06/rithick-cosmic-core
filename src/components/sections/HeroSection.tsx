@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Download, Mail, Github, Linkedin, Instagram } from "lucide-react";
+import { Download, Mail, Github, Linkedin as LinkedinIcon, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ParticlesBackground } from "../ParticlesBackground";
 import { FloatingIcons } from "../FloatingIcons";
@@ -8,7 +8,7 @@ import heroImage from "@/assets/hero-cosmic-ai.jpg";
 export const HeroSection = () => {
   const socialLinks = [
     { icon: Github, href: "https://github.com/rithick", label: "GitHub" },
-    { icon: Linkedin, href: "https://linkedin.com/in/rithick", label: "LinkedIn" },
+    { icon: LinkedinIcon, href: "https://linkedin.com/in/rithick", label: "LinkedIn" },
     { icon: Instagram, href: "https://instagram.com/rithick", label: "Instagram" },
   ];
 
