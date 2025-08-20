@@ -4,7 +4,7 @@ import { AboutSection } from "@/components/sections/AboutSection";
 import { SkillsSection } from "@/components/sections/SkillsSection";
 import { ProjectsSection } from "@/components/sections/ProjectsSection";
 import { AchievementsSection } from "@/components/sections/AchievementsSection";
-import { ArticlesSection } from "@/components/sections/ArticlesSection";
+
 import { CodingProfilesSection } from "@/components/sections/CodingProfilesSection";
 import { ContactSection } from "@/components/sections/ContactSection";
 
@@ -33,7 +33,7 @@ const Portfolio = () => {
             </motion.div>
             
             <div className="hidden md:flex space-x-8">
-              {['About', 'Skills', 'Projects', 'Achievements', 'Articles', 'Contact'].map((item, index) => (
+              {['About', 'Skills', 'Projects', 'Achievements', 'Contact'].map((item, index) => (
                 <motion.a
                   key={item}
                   href={`#${item.toLowerCase()}`}
@@ -107,15 +107,6 @@ const Portfolio = () => {
         <AchievementsSection />
       </motion.section>
 
-      <motion.section 
-        id="articles"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true, margin: "-100px" }}
-      >
-        <ArticlesSection />
-      </motion.section>
 
       <motion.section 
         id="coding"
@@ -157,7 +148,7 @@ const Portfolio = () => {
               Generative AI & Machine Learning Developer crafting the future with intelligent solutions
             </p>
             <div className="flex justify-center space-x-6 pt-4">
-              {['GitHub', 'LinkedIn', 'Twitter', 'Instagram', 'YouTube'].map((social) => (
+              {['GitHub', 'LinkedIn', 'Instagram'].map((social) => (
                 <motion.a
                   key={social}
                   href="#"

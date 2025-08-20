@@ -22,17 +22,6 @@ export const CodingProfilesSection = () => {
     },
     {
       id: 2,
-      name: "Kaggle",
-      username: "@rithickmk",
-      description: "Data science competitions and datasets",
-      stats: { competitions: "15+", medals: "3", rank: "Expert" },
-      icon: Trophy,
-      link: "https://kaggle.com/rithickmk",
-      color: "from-blue-400 to-blue-600",
-      bgColor: "bg-blue-500/10"
-    },
-    {
-      id: 3,
       name: "LeetCode",
       username: "@rithick_mk",
       description: "Algorithmic problem solving and challenges",
@@ -41,17 +30,6 @@ export const CodingProfilesSection = () => {
       link: "https://leetcode.com/rithick_mk",
       color: "from-orange-400 to-orange-600",
       bgColor: "bg-orange-500/10"
-    },
-    {
-      id: 4,
-      name: "HackerRank",
-      username: "@rithick_mk22",
-      description: "Coding challenges and skill certifications",
-      stats: { badges: "15+", stars: "5⭐", rank: "Gold" },
-      icon: Star,
-      link: "https://hackerrank.com/rithick_mk22",
-      color: "from-green-400 to-green-600",
-      bgColor: "bg-green-500/10"
     }
   ];
 
@@ -238,23 +216,23 @@ export const CodingProfilesSection = () => {
         >
           <div className="card-cosmic max-w-2xl mx-auto">
             <h3 className="text-xl font-bold text-gradient-primary mb-4">
-              Competitive Programming Highlights
+              Quick Stats
             </h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
               <div>
-                <div className="text-2xl font-bold text-gradient-cosmic">500+</div>
+                <div className="text-2xl font-bold text-gradient-cosmic">3+</div>
+                <div className="text-sm text-muted-foreground">Projects</div>
+              </div>
+              <div>
+                <div className="text-2xl font-bold text-gradient-cosmic">2+</div>
+                <div className="text-sm text-muted-foreground">Awards</div>
+              </div>
+              <div>
+                <div className="text-2xl font-bold text-gradient-cosmic">200+</div>
                 <div className="text-sm text-muted-foreground">Problems Solved</div>
               </div>
               <div>
-                <div className="text-2xl font-bold text-gradient-cosmic">8</div>
-                <div className="text-sm text-muted-foreground">Certifications</div>
-              </div>
-              <div>
-                <div className="text-2xl font-bold text-gradient-cosmic">40+</div>
-                <div className="text-sm text-muted-foreground">Contests</div>
-              </div>
-              <div>
-                <div className="text-2xl font-bold text-gradient-cosmic">1900+</div>
+                <div className="text-2xl font-bold text-gradient-cosmic">1800+</div>
                 <div className="text-sm text-muted-foreground">Peak Rating</div>
               </div>
             </div>
